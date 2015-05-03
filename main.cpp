@@ -42,7 +42,17 @@ char getPrimeraLetra(string* a)
 //Ejemplos de palindromos: Ana, arenera, arepera, anilina, ananá, Malayalam, Neuquén, Oruro, oso, radar, reconocer, rotor, salas, seres, somos, sometemos
 bool esPalindromo(string* a)
 {
-    return false;
+    string nombre;
+    nombre = *a;
+    int length=0,counter=0,total=0;
+    length = (*a).size() ;
+    if(length%2==0) counter = (length)/2;
+    else counter = (length-1)/2;
+    for(int i=0; i<counter; i++){
+    if((*a)[i]==(*a)[length-(i+1)]) total=total+1;
+    }
+    if(total==counter) return true;
+    else return false;
 }
 
 //Desreferencia base (dado) y exponente (dado) y devuelve la base elevado al exponente
